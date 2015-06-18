@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+-(int)randomNumberInstance:(int)max;
+
++(int)randomNumberClass:(int)max;
+
 
 @end
 
