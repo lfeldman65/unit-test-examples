@@ -14,6 +14,11 @@
 
 +(int)randomNumberClass:(int)max;
 
++(int)randomNumber2Class:(int)min :(int)max;
+
++(NSString *)getFirst2Chars:(NSString *)inputString;
+
+
 
 @end
 

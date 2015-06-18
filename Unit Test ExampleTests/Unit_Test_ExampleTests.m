@@ -12,7 +12,7 @@
 
 @interface Unit_Test_ExampleTests : XCTestCase
 
-@property (nonatomic) ViewController *vcToTest;  // needed for instance method
+@property (nonatomic) ViewController *vcToTest;  // needed for instance methods
 
 @end
 
@@ -21,7 +21,7 @@
 - (void)setUp {
     
     [super setUp];
-    self.vcToTest = [[ViewController alloc] init];  // needed for instance method
+    self.vcToTest = [[ViewController alloc] init];  // needed for instance methods
 }
 
 - (void)tearDown {
@@ -49,8 +49,27 @@
 - (void)testInstanceMethod {
     
     XCTAssert(([self.vcToTest randomNumberInstance:10] <= 10), @"error");
+    XCTAssert(([self.vcToTest randomNumberInstance:10] >= 0), @"error");
 
 }
+
+- (void)testClass2 {
+    
+    XCTAssert(([ViewController randomNumber2Class:2 :30] <= 30), @"error");
+    XCTAssert(([ViewController randomNumber2Class:2 :30] >= 2), @"error");
+
+}
+
+- (void)testString {
+    
+    NSString *originalString = @"larryfeldman";
+    NSString *first2chars = [ViewController getFirst2Chars:originalString];
+    NSString *expectedString = @"la";
+    XCTAssertEqualObjects(expectedString, first2chars, @"error");
+               
+}
+
+
 
 
 

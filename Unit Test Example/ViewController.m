@@ -16,8 +16,9 @@
 @implementation ViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,26 +28,34 @@
 
 //- (void)insertObject:(id)anObject atIndex:(NSUInteger)index;
 
-/*
--(int)randomNumberInstance:(int)min :(int)max {             // returns random number between min and max inclusive
+
++(int)randomNumber2Class:(int)min :(int)max {    // returns random number between min and max inclusive
     
-    int number = arc4random() % (max - min + 1);
+    int number = (arc4random() % (max - min + 1)) + min;
     return number;
     
-}*/
+}
 
-+(int)randomNumberClass:(int)max {             // returns random number between min and max inclusive
++(int)randomNumberClass:(int)max {
     
-    int number = arc4random() % max;
+    int number = arc4random() % (max + 1);
     return number;
     
 }
 
 -(int)randomNumberInstance:(int)max {
     
-    int number = arc4random() % max;
+    int number = arc4random() % (max + 1);
     return number;
+    
 }
+
++(NSString *)getFirst2Chars:(NSString *)inputString {
+    
+    NSString *newString = [inputString substringToIndex:2];
+    return newString;
+}
+
 
 
 @end
